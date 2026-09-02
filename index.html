@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poste Chef de groupe — Prototype candidat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <p class="eyebrow">Volont-R21 — Mission 0 — Challenge développement</p>
+
+    <h1>POSTE CHEF DE GROUPE</h1>
+
+    <p class="lede">
+      Simulez la lecture RFID des quatre cubes de conduite à tenir. Cliquez sur un bouton
+      « Lecture RFID » pour faire évoluer l'état du scénario correspondant.
+    </p>
+
+    <section class="progress-panel" aria-live="polite">
+      <div class="progress-panel__header">
+        <span>PRÉPARATION DU GROUPE</span>
+        <span id="progressText">0 / 4 VALIDÉES</span>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-bar__fill" id="progressFill"></div>
+      </div>
+    </section>
+  </header>
+
+  <section class="feedback" id="feedback" aria-live="polite" hidden>
+    <p class="feedback__title" id="feedbackTitle"></p>
+    <p class="feedback__message" id="feedbackMessage"></p>
+  </section>
+
+  <main class="board" id="board">
+    <!-- Les 4 cartes de scénario sont injectées par game.js -->
+  </main>
+
+  <section class="team-state" id="teamState" hidden>
+    <p class="team-state__title">CHEF DE GROUPE PRÊT</p>
+
+    <button class="team-state__btn" id="rearticulateBtn">
+      RÉARTICULATION DU GROUPE
+    </button>
+  </section>
+
+  <section class="rearticulation-state" id="rearticulationState" hidden>
+    <p class="rearticulation-state__title">RÉARTICULATION DU GROUPE</p>
+    <p class="rearticulation-state__message">
+      Rejoignez les autres joueurs et transmettez les conduites à tenir préparées.
+    </p>
+  </section>
+
+  <section class="session-controls">
+    <button class="session-controls__btn" id="resetBtn">
+      RÉINITIALISER LA SESSION
+    </button>
+  </section>
+
+  <footer class="footer">
+    <p>
+      Prototype de démonstration — les réponses affichées ici sont fictives et ne visent qu'à
+      illustrer la mécanique. Voir <code>README.md</code> pour la consigne du challenge.
+    </p>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+
+</html>

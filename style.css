@@ -1,0 +1,248 @@
+:root {
+  --color-bg: #15171a;
+  --color-bg-card: #20242a;
+  --color-border: #2d323a;
+  --color-text: #f3f2ee;
+  --color-text-muted: #a3a9b0;
+  --color-accent: #e0913f;
+  --color-danger: #e5555a;
+  --color-success: #4bc98a;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+
+.header {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.lede {
+  margin: 0;
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+.progress-panel {
+  margin-top: 16px;
+}
+
+.progress-panel__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--color-border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  width: 0;
+  height: 100%;
+  background: var(--color-success);
+  transition: width 0.25s ease;
+}
+
+.feedback {
+  max-width: 720px;
+  margin: 0 auto 20px;
+  padding: 0 24px;
+}
+
+.feedback__title {
+  margin: 0 0 4px;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.feedback__message {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.board {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card__title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.card__status {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  width: fit-content;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.card__status[data-state="a-traiter"] {
+  color: var(--color-text-muted);
+}
+
+.card__status[data-state="erreur"] {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.card__status[data-state="valide"] {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.card__btn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.card__btn:hover:not(:disabled) {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.card__btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.team-state,
+.rearticulation-state {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 20px 24px;
+  text-align: center;
+  border: 1px solid var(--color-success);
+  background: rgba(75, 201, 138, 0.12);
+  border-radius: 12px;
+}
+
+.team-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.team-state__title,
+.rearticulation-state__title {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--color-success);
+}
+
+.team-state__btn {
+  background: var(--color-accent);
+  border: none;
+  color: #1a1206;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.rearticulation-state__message {
+  margin: 8px 0 0;
+  color: var(--color-text-muted);
+}
+
+.session-controls {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.session-controls__btn {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.session-controls__btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.footer {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
